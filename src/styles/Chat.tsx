@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: "#fff",
     flexDirection: "row",
-    height: 80,
+    height: '12%',
     alignItems: "center",
     paddingVertical: 8,
     paddingHorizontal: 16,
@@ -48,6 +48,43 @@ const styles = StyleSheet.create({
     marginLeft: "auto",
     width: 100,
     justifyContent: "space-around"
+  },
+  
+  messagesView: {
+    width: "100%",
+    height: "76%",
+    backgroundColor: "#f6f6f6"
+  },
+
+  myMessage: {
+    maxWidth: 100,
+    backgroundColor: "#703EFE"
+  },
+
+  otherMessage: {
+    maxWidth: 100,
+    backgroundColor: "#fff"
+  },
+
+  sendMessageView: {
+    position: "absolute",
+    alignItems: "center",
+    justifyContent: "center",
+    bottom: 0,
+    width: "100%",
+    backgroundColor: "#fff",
+    padding: 16,
+    height: '12%',
+  },
+
+  contentView: {
+    padding: 16,
+    width: "90%",
+    backgroundColor: "#f0f0f0",
+    borderRadius: 8,
+  },
+
+  massageInput: {
   }
 })
 

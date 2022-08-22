@@ -1,7 +1,8 @@
 import {
   View,
   Text,
-  Image
+  Image,
+  TextInput
 } from 'react-native'
 import { FontAwesome5, Entypo } from '@expo/vector-icons'
 
@@ -34,6 +35,19 @@ const Chat = () => {
         <View style={styles.userCall}>
           <Entypo name="video-camera" size={20} color="#ddd" />
           <FontAwesome5 name="phone-alt" size={20} color="#ddd" />
+        </View>
+      </View>
+      <View style={styles.messagesView}>
+          <Text
+            style={styles.myMessage}
+          >My Message</Text>
+          <Text
+            style={[styles.otherMessage]}
+          >Other Message</Text>
+      </View>
+      <View style={styles.sendMessageView}>
+        <View style={styles.contentView}>
+          <TextInput placeholder='type here' style={styles.massageInput} />
         </View>
       </View>
     </View>
