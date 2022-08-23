@@ -2,15 +2,22 @@ import {
   View,
   Text,
   Image,
-  TextInput
+  TextInput,
+  KeyboardAvoidingView,
+  Platform,
+  Keyboard
 } from 'react-native'
 import { FontAwesome5, Entypo } from '@expo/vector-icons'
 
 import styles from './styles/Chat';
+import { useState } from 'react';
 
 const Chat = () => {
   return(
-    <View style={styles.container}>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : "height"}
+      style={styles.container}
+    >
       <View style={styles.header}>
         <FontAwesome5 name="arrow-left" size={20} color="#242424" />
         <View
@@ -38,19 +45,41 @@ const Chat = () => {
         </View>
       </View>
       <View style={styles.messagesView}>
-          <Text
-            style={styles.myMessage}
-          >My Message</Text>
-          <Text
-            style={[styles.otherMessage]}
-          >Other Message</Text>
+
+       {/* Mensagem Recebida */}
+        <View
+          style={{
+            alignItems: "flex-start",
+            marginLeft: 8,
+            marginTop: 8,
+          }}
+        >
+          <View style={[styles.message, {backgroundColor: "#fff"}]}>
+            <Text>Other Messajkjak jskajskj akjsk ajksj kajskjaksjkajsk jkjsaj ksjakj ksjk jskjak jskja ksjkaj ksajks jakj ksjak jskaj kjsak ge</Text>
+          </View>
+          <Text style={styles.messageStatus}>12:45</Text>
+        </View>
+
+        {/* Mensagem Enviada */}
+        <View
+          style={{
+            marginTop: 8,
+            alignItems: "flex-end",
+            marginRight: 8,
+           }}
+        > 
+          <View style={[styles.message, {backgroundColor: "#04ffff"}]}>
+            <Text>My Message skjakjsakj skja jskaj skjakjskjaksjk jksja jskajk jksjak jskaj kjskaj skjak jskaj ksj kajsk jakjs kajs kjak sjak jskaj sk</Text>
+          </View>
+          <Text style={styles.messageStatus}>12:45</Text>
+        </View>
       </View>
       <View style={styles.sendMessageView}>
         <View style={styles.contentView}>
-          <TextInput placeholder='type here' style={styles.massageInput} />
+          <TextInput numberOfLines={6} multiline placeholder='type here' style={styles.massageInput} />
         </View>
       </View>
-    </View>
+    </KeyboardAvoidingView>
   )
 }
 

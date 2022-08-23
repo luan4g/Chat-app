@@ -1,4 +1,6 @@
-import { StyleSheet } from 'react-native'
+import { Dimensions, StyleSheet } from 'react-native'
+
+const screenHigh = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
@@ -51,40 +53,44 @@ const styles = StyleSheet.create({
   },
   
   messagesView: {
+    justifyContent: "flex-end",
     width: "100%",
     height: "76%",
+    paddingBottom: 16,
     backgroundColor: "#f6f6f6"
   },
 
-  myMessage: {
-    maxWidth: 100,
-    backgroundColor: "#703EFE"
+  message :{
+    borderRadius: 8,
+    padding: 8,
+    maxWidth: '60%',
   },
 
-  otherMessage: {
-    maxWidth: 100,
-    backgroundColor: "#fff"
+  messageStatus: {
+    marginTop: 2,
+    fontSize: 10,
   },
 
   sendMessageView: {
-    position: "absolute",
     alignItems: "center",
     justifyContent: "center",
-    bottom: 0,
     width: "100%",
     backgroundColor: "#fff",
-    padding: 16,
-    height: '12%',
+    paddingVertical: 16,
   },
 
   contentView: {
-    padding: 16,
+    alignItems: 'flex-start',
+    justifyContent: "center",
     width: "90%",
+    padding: 16,
     backgroundColor: "#f0f0f0",
     borderRadius: 8,
+    marginHorizontal: 16,
   },
 
   massageInput: {
+    width: '90%'
   }
 })
 
